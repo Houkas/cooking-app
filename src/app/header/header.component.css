@@ -1,0 +1,10 @@
+.nav-r{
+    position: absolute;
+    right: 0;
+    padding-right: 25px;
+}
+
+.dropdown a{
+    color:white;
+    text-decoration: none;
+}
