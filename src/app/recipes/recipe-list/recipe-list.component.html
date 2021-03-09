@@ -3,23 +3,9 @@
         <button class="btn btn-success">New recipe</button>
     </div>
     <div class="col-xs-12">
-        <div *ngFor="let recipe of recipes" class="list-group"><!-- Boucle *ngFor pour lister toutes les recettes - tableaux recettes[recette,recette...] -->
-            <a href="#" class="list-group-item-action clearfix recipe">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
-                        <strong>{{ recipe.categorie }}</strong>
-                        <p>{{ recipe.description }}</p>
-                    </div>
-                    <div class="col-lg-6">
-                        <img src="{{ recipe.imagePath }}" class="img-responsive" alt="" style="max-height: 100px;">
-                    </div>
-                </div>
-                
-                
-            </a>
-        </div>
-        <app-recipe-item></app-recipe-item>
+        
+        <app-recipe-item *ngFor="let recipeEl of recipes" [recipe]="recipeEl" (recipeSelected)="onRecipeSelected(recipeEl)"></app-recipe-item>
+        <!--recipeEl pour recipeElement-->
     </div>
 </div>
 
